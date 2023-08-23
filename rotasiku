@@ -623,6 +623,13 @@ while isOwner == true do
                     join(list,FarmWorldID)
                 end
             end
+	    if inventory:getItemCount(WindID) >= 10 then
+                sleep(1000)
+                Dropf()
+                if world.name ~= list then
+                    join(list,FarmWorldID)
+                end
+            end
             Hazir(list)
         end
         dinlenme = dinlenme + 1
