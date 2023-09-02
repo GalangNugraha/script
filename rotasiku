@@ -161,29 +161,6 @@ function Reconnectdropseed()
     end
 end
 
-function Reconnectdropwind()
-    if bot.status ~= 1 then
-        GonWebhook("Bot Offline ".."<@" .. YourDiscordid .. ">")
-        while bot.status ~= 1 do
-            bot:connect()
-            sleep(10000)
-        end
-	sleep(5000)
-        GonWebhook("Bot Back To Online ".."<@" .. YourDiscordid .. ">")
-        join(StorageWorld,StorageWorldSeedID)
-    end
-    if world.name ~= StorageWorld then
-        join(StorageWorld,StorageWorldSeedID)
-    end
-    AnlikYer()
-    Dunyadami = tostring(world.name)
-    if Dunyadami ~= "" and Dunyadami ~= "EXIT" then
-        if world:getTile(Botx,Boty).fg == 6 then
-            join(StorageWorld,StorageWorldSeedID)
-        end
-    end
-end
-
 function Reconnectdroppack()
     if bot.status ~= 1 then
         GonWebhook("Bot Offline ".."<@" .. YourDiscordid .. ">")
@@ -287,12 +264,12 @@ function Dropf(list)
         "\n <a:World:997157064008810620> Current World : "..world.name..
         "\n <a:online:1007062631787544666> Status : "..bot.status..
         "\n <:pepper_tree_seed:1012630107715797073> Dropped Seed : "..floats(BlockID+1).ucanlar..
-        "\n <:pepper_tree_seed:1012630107715797073> Dropped wind : "..floats(WindID).ucanlar..
+	"\n <:pepper_tree_seed:1012630107715797073> Dropped Seed : "..floats(WindID).ucanlar..
         "\n <:pepper_tree_seed:1012630107715797073> Dropped Block : "..floats(BlockID).ucanlar)
     end
-    if inventory:getItemCount(WindID) >= 10 then
+    if inventory:getItemCount(WindID) >= 100 then
         bot.auto_collect = false
-        Reconnectdropwind()
+        Reconnectdropseed()
         join(StorageWorld,StorageWorldSeedID)
         while (inventory:getItemCount(WindID) > 0) do
             Reconnectdropseed()
@@ -305,7 +282,7 @@ function Dropf(list)
         "\n <a:World:997157064008810620> Current World : "..world.name..
         "\n <a:online:1007062631787544666> Status : "..bot.status..
         "\n <:pepper_tree_seed:1012630107715797073> Dropped Seed : "..floats(BlockID+1).ucanlar..
-	"\n <:pepper_tree_seed:1012630107715797073> Dropped wind : "..floats(WindID).ucanlar..
+        "\n <:pepper_tree_seed:1012630107715797073> Dropped Seed : "..floats(WindID).ucanlar..
         "\n <:pepper_tree_seed:1012630107715797073> Dropped Block : "..floats(BlockID).ucanlar)
     end 
     if inventory:getItemCount(PackitemID) > PackDropCount then
