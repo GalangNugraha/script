@@ -19,7 +19,7 @@ function GonWebhook(Shinuqi)
   
     $footer = [PSCustomObject]@{
         icon_url = "https://cdn.discordapp.com/emojis/978628955907170314.gif?size=96&quality=lossless"
-        text = "]].."Shinuqi#2111 | Date : "..(os.date"%d/%m/%y":upper().." Hour : ")..os.date("%I")..":"..os.date("%M").." "..os.date("%p"):upper()..[["
+        text = "]].."Didistore | Date : "..(os.date"%d/%m/%y":upper().." Hour : ")..os.date("%I")..":"..os.date("%M").." "..os.date("%p"):upper()..[["
     }
   
     $embedObject = [PSCustomObject]@{
