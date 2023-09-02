@@ -15,7 +15,7 @@ function GonWebhook(Didistore)
     }
     $color = Get-Random -Minimum 0 -Maximum 16777215
     $title = 'Didistore#2111 - Rotation'
-    $description = "**]]..Didistore..[[**"
+    $description = "**]]..didistore..[[**"
   
     $footer = [PSCustomObject]@{
         icon_url = "https://cdn.discordapp.com/emojis/978628955907170314.gif?size=96&quality=lossless"
