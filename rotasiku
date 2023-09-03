@@ -160,6 +160,28 @@ function Reconnectdropseed()
         end
     end
 end
+function Reconnectdropwind()
+    if bot.status ~= 1 then
+        GonWebhook("Bot Offline ".."<@" .. YourDiscordid .. ">")
+        while bot.status ~= 1 do
+            bot:connect()
+            sleep(10000)
+        end
+	sleep(5000)
+        GonWebhook("Bot Back To Online ".."<@" .. YourDiscordid .. ">")
+        join(StorageWorld,StorageWorldSeedID)
+    end
+    if world.name ~= StorageWorld then
+        join(StorageWorld,StorageWorldSeedID)
+    end
+    AnlikYer()
+    Dunyadami = tostring(world.name)
+    if Dunyadami ~= "" and Dunyadami ~= "EXIT" then
+        if world:getTile(Botx,Boty).fg == 6 then
+            join(StorageWorld,StorageWorldSeedID)
+        end
+    end
+end
 
 function Reconnectdroppack()
     if bot.status ~= 1 then
@@ -270,7 +292,7 @@ function Dropf(list)
     end
     if inventory:getItemCount(WindID) >= 100 then
         bot.auto_collect = false
-        Reconnectdropseed()
+        Reconnectdropwind()
         join(StorageWorld,StorageWorldSeedID)
         while (inventory:getItemCount(WindID) > 0) do
             Reconnectdropseed()
