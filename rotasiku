@@ -19,7 +19,7 @@ function GonWebhook(Shinuqi)
   
     $footer = [PSCustomObject]@{
         icon_url = "https://cdn.discordapp.com/emojis/978628955907170314.gif?size=96&quality=lossless"
-        text = "]].."Didistore | Date : "..(os.date"%d/%m/%y":upper().." Hour : ")..os.date("%I")..":"..os.date("%M").." "..os.date("%p"):upper()..[["
+        text = "]].."BUY SC ? JOIN DIDI STORE | Date : "..(os.date"%d/%m/%y":upper().." Hour : ")..os.date("%I")..":"..os.date("%M").." "..os.date("%p"):upper()..[["
     }
   
     $embedObject = [PSCustomObject]@{
@@ -290,7 +290,7 @@ function Dropf(list)
         "\n <:pepper_tree_seed:1012630107715797073> Dropped Block : "..floats(BlockID).ucanlar..
 	"\n <:jam:987145988470898758> UpTime Bot : "..SecondTT(os.difftime(os.time(), startT)))
     end
-    if inventory:getItemCount(WindID) >= 100 then
+    if inventory:getItemCount(WindID) >= 10 then
         bot.auto_collect = false
         Reconnectdropwind()
         join(StorageWorld,StorageWorldSeedID)
